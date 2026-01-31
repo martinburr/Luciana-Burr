@@ -1,0 +1,19 @@
+name: Website Update
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code kopieren
+        uses: actions/checkout@v3
+      - name: Dateien auf AWS übertragen
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "."
+          target: "/var/www/lucianaburr"

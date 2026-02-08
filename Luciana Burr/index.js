@@ -110,10 +110,10 @@ function changeLanguage(lang, event) {
     document.getElementById('rate-mz').innerText = translations[lang].ratemz;
     
     // "/ Session" Labels (Korrektur der Variablen-Tippfehler)
-    const sessionLabels = document.querySelectorAll('.per-session-label');
-    sessionLabels.forEach(label => {
-        label.innerText = translations[lang].persessionlabel;
-    });
+const sessionLabels = document.querySelectorAll('.per-session-label');
+sessionLabels.forEach(label => {
+    label.innerText = translations[lang].persessionlabel;
+});
 
     // Buttons & Footer
     document.getElementById('booking-btn').innerText = translations[lang].booking;
